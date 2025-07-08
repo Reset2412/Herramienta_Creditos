@@ -84,14 +84,11 @@ Ejecuta la aplicación:
 ```bash
 python app.py
 
----
 
-##📦 Requisitos
+📦 Requisitos
 Python 3.8 o superior
 
----
-
-##📑 Criterios evaluados en el proyecto
+📑 Criterios evaluados en el proyecto
 
 ✅ Correcto funcionamiento de la aplicación.
 
@@ -105,13 +102,8 @@ Python 3.8 o superior
 
 ✅ Implementación correcta de la gráfica con Chart.js.
 
----
-
-##📅 Fecha de entrega
-
+📅 Fecha de entrega
 13 de julio antes de las 11:59 pm
 
----
-## 📮 Contacto
-
+📮 Contacto
 Este proyecto fue desarrollado como parte del proceso de selección para el puesto de Ingeniero de Software Jr. en Delta Data Consulting.
