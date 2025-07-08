@@ -27,23 +27,21 @@ Aplicación web desarrollada con Flask y SQLite para registrar y gestionar créd
 
 ## 📁 Estructura del proyecto
 
+```yaml
 Herramienta_Creditos/
 ├── app.py
 ├── database.py
 ├── models.py
 ├── templates/
-│ ├── index.html
-│ └── form.html
+│   ├── index.html
+│   └── form.html
 ├── static/
-│ ├── styles.css
-│ └── chart.js
+│   ├── styles.css
+│   └── chart.js
 ├── .gitignore
 ├── README.md
 └── requirements.txt
-
-yaml
-Copiar
-Editar
+```
 
 ---
 
@@ -69,41 +67,32 @@ Clona el repositorio:
 ```bash
 git clone https://github.com/Reset2412/Herramienta_Creditos.git
 cd Herramienta_Creditos
+
 Crea y activa un entorno virtual (opcional pero recomendado):
 
-bash
-Copiar
-Editar
+```bash
 python -m venv venv
 source venv/bin/activate   # En Windows: venv\Scripts\activate
+
 Instala las dependencias:
 
-bash
-Copiar
-Editar
+```bash
 pip install -r requirements.txt
+
 Ejecuta la aplicación:
 
-bash
-Copiar
-Editar
+```bash
 python app.py
-Abre tu navegador en:
 
-arduino
-Copiar
-Editar
-http://localhost:5000
-📈 Visualización de créditos
-Se utiliza Chart.js para mostrar una gráfica dinámica del total de créditos otorgados.
-(Opcional: distribución por cliente o rangos de montos).
+---
 
-📦 Requisitos
+##📦 Requisitos
 Python 3.8 o superior
 
-pip
+---
 
-📑 Criterios evaluados en el proyecto
+##📑 Criterios evaluados en el proyecto
+
 ✅ Correcto funcionamiento de la aplicación.
 
 ✅ Calidad del código y estructura del proyecto.
@@ -116,8 +105,13 @@ pip
 
 ✅ Implementación correcta de la gráfica con Chart.js.
 
-📅 Fecha de entrega
+---
+
+##📅 Fecha de entrega
+
 13 de julio antes de las 11:59 pm
 
-📮 Contacto
+---
+## 📮 Contacto
+
 Este proyecto fue desarrollado como parte del proceso de selección para el puesto de Ingeniero de Software Jr. en Delta Data Consulting.
