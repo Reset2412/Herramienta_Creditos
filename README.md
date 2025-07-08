@@ -59,3 +59,56 @@ Se utiliza SQLite con una tabla llamada `creditos` con los siguientes campos:
 | `fecha_otorgamiento` | texto | Fecha en formato `YYYY-MM-DD`  |
 
 ---
+
+## 🚀 Cómo ejecutar el proyecto
+
+Clona el repositorio:
+```bash
+git clone https://github.com/Reset2412/Herramienta_Creditos.git
+cd Herramienta_Creditos
+```
+
+Crea y activa un entorno virtual (opcional pero recomendado):
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+Instala las dependencias:
+```bash
+pip install -r requirements.txt
+```
+
+Ejecuta la aplicación:
+```bash
+python app.py
+```
+
+---
+
+## 📦 Requisitos
+Python 3.8 o superior
+
+---
+
+## 📑 Criterios evaluados en el proyecto
+
+Correcto funcionamiento de la aplicación.
+
+- Calidad del código y estructura del proyecto.
+- Uso adecuado de Flask y SQLite.
+- Diseño claro y funcional de la interfaz.
+- Explicación y entendimiento del código (mediante comentarios y este README).
+- Implementación correcta de la gráfica con Chart.js.
+
+---
+
+## 📅 Fecha de entrega
+
+13 de julio antes de las 11:59 pm
+
+---
+## 📮 Contacto
+
+Este proyecto fue desarrollado como parte del proceso de selección para el puesto de Ingeniero de Software Jr. en Delta Data Consulting.
+Esto no se ve bien aunque quiera
