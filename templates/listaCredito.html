@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lista de Créditos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}" />
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" role="navigation" aria-label="Menú principal">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="{{ url_for('home') }}">Gestión de Créditos</a>
+
+            <!-- Botones alineados a la derecha -->
+            <div class="ms-auto d-flex gap-2" role="menu">
+                <a href="{{ url_for('registroCredito') }}" class="btn btn-light btn-sm" role="menuitem" aria-label="Registrar nuevo crédito">
+                    Registrar Crédito
+                </a>
+                <a href="{{ url_for('creditos') }}" class="btn btn-light btn-sm" role="menuitem" aria-label="Ver lista de créditos">
+                    Ver Créditos
+                </a>
+            </div>
+        </div>
+    </nav>
+    <br />
+
+    <!-- Contenedor principal -->
+    <main class="container mt-4" role="main">
+        <h2>Créditos Registrados</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered mt-3">
+                <thead class="table-light">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Monto</th>
+                        <th scope="col">Tasa</th>
+                        <th scope="col">Plazo</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for credito in creditos %}
+                    <tr>
+                        <td>{{ credito.id }}</td>
+                        <td>{{ credito.cliente }}</td>
+                        <td>$ {{ "%.2f"|format(credito.monto) }}</td>
+                        <td>% {{ "%.2f"|format(credito.tasa_interes) }}</td>
+                        <td>{{ credito.plazo }} Meses</td>
+                        <td>{{ credito.fecha_otorgamiento.strftime('%d/%m/%Y') }}</td>
+                        <td>
+                            <a href="{{ url_for('editarCredito', id=credito.id) }}" class="btn btn-warning btn-sm" aria-label="Editar crédito {{ credito.id }}">
+                                Editar
+                            </a>
+                            <a href="{{ url_for('eliminarCredito', id=credito.id) }}" class="btn btn-danger btn-sm" aria-label="Eliminar crédito {{ credito.id }}" onclick="return confirm('¿Está seguro de eliminar este crédito?');">
+                                Eliminar
+                            </a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="7" class="text-center">No hay créditos registrados.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <section class="container mt-4" role="main" style="max-width: 700px; margin: auto;">
+    <h3 class="mt-5 mb-4 text-center" style="color: #2c3e50; font-weight: 600;">
+        Distribución de Créditos por Cliente
+    </h3>
+    <canvas id="graficaMontos" style="width: 100%; height: 400px;"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const clientes = {{ clientes|tojson | safe }};
+                const montos = {{ montos|tojson | safe }};
+                const ctx = document.getElementById('graficaMontos').getContext('2d');
+
+                // Generar colores HSL para cada barra, para mejor distinción
+                function generarColores(num) {
+                    const colores = [];
+                    const baseHue = 210; // azul base
+                    for(let i = 0; i < num; i++) {
+                        const hue = (baseHue + i * (360 / num)) % 360;
+                        colores.push(`hsl(${hue}, 70%, 50%)`);
+                    }
+                    return colores;
+                }
+                const coloresBarra = generarColores(clientes.length);
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: clientes,
+                        datasets: [{
+                            label: 'Monto Total por Cliente (MXN)',
+                            data: montos,
+                            backgroundColor: coloresBarra,
+                            borderColor: coloresBarra.map(c => c.replace('50%', '40%')),
+                            borderWidth: 1,
+                            borderRadius: 5,
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: { font: { size: 14, weight: 'bold' } }
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: ctx => ` $${ctx.formattedValue}`
+                                }
+                            },
+                            title: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Monto (MXN)',
+                                    font: { size: 14, weight: 'bold' }
+                                },
+                                ticks: {
+                                    callback: value => value.toLocaleString()
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Clientes',
+                                    font: { size: 14, weight: 'bold' }
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+    </section>
+
+</body>
+</html>

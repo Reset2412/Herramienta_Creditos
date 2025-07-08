@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Créditos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="{{ url_for('home') }}">Gestión de Créditos</a>
+            <div class="ms-auto d-flex gap-2">
+                <a href="{{ url_for('registroCredito') }}" class="btn btn-light btn-sm">Registrar Crédito</a>
+                <a href="{{ url_for('creditos') }}" class="btn btn-light btn-sm">Ver Créditos</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Formulario de registro -->
+    <div class="container mt-4">
+        <h2 class="mb-4">Registrar nuevo crédito</h2>
+        <form method="POST" action="{{ url_for('registro') }}">
+            <div class="mb-3">
+                <label for="cliente" class="form-label">Cliente</label>
+                <input 
+                    type="text" 
+                    id="cliente" 
+                    name="cliente" 
+                    class="form-control" 
+                    placeholder="Nombre del cliente"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="monto" class="form-label">Monto</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input 
+                        type="number" 
+                        id="monto" 
+                        name="monto" 
+                        class="form-control" 
+                        step="0.01" 
+                        min="0"
+                        placeholder="Monto otorgado"
+                        required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="tasa_interes" class="form-label">Tasa de Interés (%)</label>
+                <div class="input-group">
+                    <span class="input-group-text">%</span>
+                    <input 
+                        type="number" 
+                        id="tasa_interes" 
+                        name="tasa_interes" 
+                        class="form-control" 
+                        step="0.01" 
+                        min="0"
+                        placeholder="Tasa aplicable"
+                        required>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="plazo" class="form-label">Plazo (meses)</label>
+                <input 
+                    type="number" 
+                    id="plazo" 
+                    name="plazo" 
+                    class="form-control" 
+                    min="1"
+                    placeholder="Duración en meses"
+                    required>
+            </div>
+
+            <div class="mb-3">
+                <label for="fecha_otorgamiento" class="form-label">Fecha de Otorgamiento</label>
+                <input 
+                    type="date" 
+                    id="fecha_otorgamiento" 
+                    name="fecha_otorgamiento" 
+                    class="form-control"
+                    required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Registrar</button>
+        </form>
+    </div>
+
+</body>
+</html>

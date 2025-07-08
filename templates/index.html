@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio | Gestión de Créditos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}" />
+  <meta name="description" content="Sistema web para el control y registro de créditos, desarrollado con Flask y SQLite por Joshua Getzael Paz Sánchez." />
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="{{ url_for('home') }}">Gestión de Créditos</a>
+
+      <!-- Botones alineados a la derecha -->
+      <div class="ms-auto d-flex gap-2">
+        <a href="{{ url_for('registroCredito') }}" class="btn btn-light btn-sm" role="button" aria-label="Registrar Crédito">
+          Registrar Crédito
+        </a>
+        <a href="{{ url_for('creditos') }}" class="btn btn-light btn-sm" role="button" aria-label="Ver Créditos">
+          Ver Créditos
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Encabezado principal -->
+  <header class="bg-light py-5 shadow-sm text-center" role="banner">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Sistema de Gestión de Créditos</h1>
+      <p class="lead text-muted">
+        Registra, administra y visualiza créditos de forma sencilla y eficaz.
+      </p>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="container my-5" role="main" tabindex="-1">
+    <!-- Sección: Propósito -->
+    <section class="mb-5" aria-labelledby="proposito-title">
+      <h2 id="proposito-title" class="text-primary">¿Para qué sirve este programa?</h2>
+      <p>
+        Este sistema fue creado con el objetivo de facilitar el registro, control y visualización de créditos otorgados
+        a clientes. Permite almacenar información como nombre del cliente, monto del crédito, tasa de interés, plazo y
+        fecha de otorgamiento.
+      </p>
+    </section>
+
+    <!-- Sección: Tecnologías -->
+    <section class="mb-5" aria-labelledby="tecnologias-title">
+      <h2 id="tecnologias-title" class="text-primary">Tecnologías utilizadas</h2>
+      <ul>
+        <li><strong>Python</strong> con <strong>Flask</strong> para el backend</li>
+        <li><strong>SQLite</strong> como base de datos ligera</li>
+        <li><strong>HTML5</strong> y <strong>Bootstrap Lux</strong> para la interfaz</li>
+      </ul>
+    </section>
+
+    <!-- Sección: Autor -->
+    <section aria-labelledby="autor-title">
+      <h2 id="autor-title" class="text-primary">Desarrollado por</h2>
+      <p class="mb-0">
+        <strong>Joshua Getzael Paz Sánchez</strong><br />
+        Estudiante de Ingeniería en Desarrollo de Software Multiplataforma
+      </p>
+    </section>
+  </main>
+</body>
+</html>
