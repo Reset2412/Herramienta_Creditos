@@ -68,7 +68,7 @@ Se utiliza SQLite con una tabla llamada `creditos` con los siguientes campos:
 Clona el repositorio:
 ```bash
 git clone https://github.com/Reset2412/Herramienta_Creditos.git
-cd Herramienta_Creditos
+cd Herramienta_Registro_Créditos
 ```
 
 Crea y activa un entorno virtual (opcional pero recomendado):
