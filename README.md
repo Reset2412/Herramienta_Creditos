@@ -77,7 +77,7 @@ pip install pipenv
 pipenv shell
 
 python -m venv venv
-source venv/bin/activate
+pipenv install
 ```
 
 Instala las dependencias:
