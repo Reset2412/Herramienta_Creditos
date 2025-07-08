@@ -70,12 +70,17 @@ cd Herramienta_Creditos
 
 Crea y activa un entorno virtual (opcional pero recomendado):
 ```bash
+pip install pipenv
+pipenv shell
+
 python -m venv venv
 source venv/bin/activate
 ```
 
 Instala las dependencias:
 ```bash
+pipenv install flask
+pipenv install Flask-SQLAlchemy
 pip install -r requirements.txt
 ```
 
@@ -111,4 +116,3 @@ Correcto funcionamiento de la aplicación.
 ## 📮 Contacto
 
 Este proyecto fue desarrollado como parte del proceso de selección para el puesto de Ingeniero de Software Jr. en Delta Data Consulting.
-Esto no se ve bien aunque quiera
