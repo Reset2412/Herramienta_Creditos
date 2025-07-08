@@ -30,7 +30,7 @@ Aplicación web desarrollada con Flask y SQLite para registrar y gestionar créd
 ## 📁 Estructura del proyecto
 
 ```yaml
-Herramienta de Registro de Créditos/
+Herramientao_Creditos/
 ├── app.py # Archivo principal de la aplicación Flask
 ├── database/
 │ └── creditos.db # Base de datos SQLite
