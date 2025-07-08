@@ -11,7 +11,9 @@ Aplicación web desarrollada con Flask y SQLite para registrar y gestionar créd
 - SQLite  
 - HTML5 + CSS3  
 - JavaScript  
-- Chart.js  
+- Chart.js
+- Jinja2 (sistema de plantillas de Flask)  
+- Bootstrap
 
 ---
 
@@ -28,19 +30,20 @@ Aplicación web desarrollada con Flask y SQLite para registrar y gestionar créd
 ## 📁 Estructura del proyecto
 
 ```yaml
-Herramienta_Creditos/
-├── app.py
-├── database.py
-├── models.py
-├── templates/
-│   ├── index.html
-│   └── form.html
+Herramienta de Registro de Créditos/
+├── app.py # Archivo principal de la aplicación Flask
+├── database/
+│ └── creditos.db # Base de datos SQLite
 ├── static/
-│   ├── styles.css
-│   └── chart.js
-├── .gitignore
-├── README.md
-└── requirements.txt
+│ └── bootstrap.css # Estilos CSS
+├── templates/
+│ ├── editarCredito.html
+│ ├── index.html
+│ ├── listaCredito.html
+│ └── registroCredito.html
+├── Pipfile # Gestión de dependencias (Pipenv)
+├── Pipfile.lock
+└── README.md
 ```
 
 ---
