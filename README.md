@@ -63,12 +63,19 @@ Se utiliza SQLite con una tabla llamada `creditos` con los siguientes campos:
 
 ---
 
+## Recuerda Instalas Python y SQLite
+
+-Python https://www.python.org/downloads/ Ultima Version
+-SQLite3 https://www.sqlite.org
+
+---
+
 ## 🚀 Cómo ejecutar el proyecto
 
 Clona el repositorio:
 ```bash
 git clone https://github.com/Reset2412/Herramienta_Creditos.git
-cd Herramientao_Creditos
+cd Herramientao_Creditos-main
 ```
 
 Crea y activa un entorno virtual (opcional pero recomendado):
