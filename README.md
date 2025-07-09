@@ -65,8 +65,8 @@ Se utiliza SQLite con una tabla llamada `creditos` con los siguientes campos:
 
 ## Recuerda Instalar Python y SQLite
 
--Python https://www.python.org/downloads/ Ultima Version
--SQLite3 https://www.sqlite.org
+- Python https://www.python.org/downloads/ Ultima Version
+- SQLite3 https://www.sqlite.org
 
 ---
 
